@@ -8,14 +8,14 @@ body {
   font-family: Raleway, sans-serif;
   margin: 0;
   font-size: 1.4em;
-  background: #dfdfdf;
-  color: #333;
+  background: #F5F5DC;
+  color: #004225;
 }
 h1,h2,h3,p {
   margin: 0;
 }
 input, textarea {
-  color: #333;
+  color: #004225;
   padding: 8px;
   font-size: 1em;
   border-radius: 4px;
@@ -28,7 +28,7 @@ input, textarea {
 .page-title {
   text-align: center;
   margin: 40px auto;
-  color: #333;
+  color: #004225;
 }
 .loading, .error {
   text-align: center;
