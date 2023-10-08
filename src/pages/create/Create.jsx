@@ -5,7 +5,13 @@ export default function Create() {
 
   const [title, setTitle] = useState("");
   const [method, setMethod] = useState("");
+  const [ingredients, setIngredients] = useState([]);
   const [cookingTime, setCookingTime] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(title, method, cookingTime);
+  }
 
   return (
     <div className="create">
@@ -24,12 +30,27 @@ export default function Create() {
         <label>
           <span>Cooking Time (mins):</span>
           <input 
-            type="text"
+            type="number"
             onChange={(e) => setCookingTime(e.target.value)}
             value={cookingTime}
             className="cooking-time-input"
             required
           />
+        </label>
+        <label>
+          <span>Ingredients:</span>
+          <div className="ingredients-list">
+            <input type="text" />
+            <ul>{ingredients.map(i => (
+              <li>{i}</li>
+            ))}</ul>
+            <button 
+              className="ingredients-button"
+              onChange={(e) => setIngredients(e.target.value)}  
+            >
+            Add
+            </button>
+          </div>
         </label>
         <label>
           <span>Method:</span>
@@ -40,6 +61,10 @@ export default function Create() {
             required
           />
         </label>
+
+        <button
+          onSubmit={handleSubmit}
+        >Submit</button>
       </form>
     </div>
   )
