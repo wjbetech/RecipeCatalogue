@@ -5,19 +5,19 @@
 
     & form {
         background-color: #FFCF9D;
-        padding: 25px;
+        padding: 20px;
         border-radius: 12px;
     }
 
     & span {
         display: block;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.25rem;
         font-size: 18px;
         font-weight: 700;
     }
 
     & input {
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.75rem;
         font-size: 18px;
     }
 
@@ -28,10 +28,20 @@
     }
 
     & .ingredients-button {
-        margin-bottom: 1rem;
+        margin-top: 0;
+        margin-bottom: 0;
     }
 
-    & ul.form-button { 
-        margin-top: -0.75rem;
+    & .form-button {
+        margin-top: 0.25rem;
+    }
+
+    & ul {
+        margin-top: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+
+    & li {
+        font-size: 16px;
     }
 }

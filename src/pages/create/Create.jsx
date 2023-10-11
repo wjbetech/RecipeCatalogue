@@ -1,16 +1,30 @@
-import { useState } from "react"
+import { useState, useRef } from "react"
 import "./Create.css"
 
 export default function Create() {
 
   const [title, setTitle] = useState("");
   const [method, setMethod] = useState("");
-  const [ingredients, setIngredients] = useState([]);
   const [cookingTime, setCookingTime] = useState("");
+  const [ingredients, setIngredients] = useState([]);
+  const [newIngredient, setNewIngredient] = useState("");
+  const ingredientInput = useRef(null)
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(title, method, cookingTime);
+    console.log(title, method, cookingTime, ingredients);
+  }
+
+  const handleAddIngredients = (e) => {
+    e.preventDefault();
+    const ingred = newIngredient.trim();
+    if (ingred && !ingredients.includes(ingred)) {
+      setIngredients(prevIngredients => [
+        ...prevIngredients, ingred
+      ])
+    } 
+    setNewIngredient("");
+    ingredientInput.current.focus();
   }
 
   return (
@@ -40,16 +54,21 @@ export default function Create() {
         <label>
           <span>Ingredients:</span>
           <div className="ingredients-list">
-            <input type="text" />
-            <ul className="form-button">{ingredients.map(i => (
-              <li>{i}</li>
-            ))}</ul>
+            <input 
+              type="text" 
+              onChange={(e) => setNewIngredient(e.target.value)}
+              value={newIngredient}
+              ref={ingredientInput}
+            />
             <button 
               className="ingredients-button"
-              onChange={(e) => setIngredients(e.target.value)}  
+              onClick={handleAddIngredients}  
             >
             Add
             </button>
+            <ul className="ingredients">
+              {ingredients.map(i => (<li>{i}</li>))}
+            </ul>
           </div>
         </label>
         <label>
