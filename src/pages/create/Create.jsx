@@ -41,7 +41,7 @@ export default function Create() {
           <span>Ingredients:</span>
           <div className="ingredients-list">
             <input type="text" />
-            <ul>{ingredients.map(i => (
+            <ul className="form-button">{ingredients.map(i => (
               <li>{i}</li>
             ))}</ul>
             <button 
@@ -63,6 +63,7 @@ export default function Create() {
         </label>
 
         <button
+          className="form-button"
           onSubmit={handleSubmit}
         >Submit</button>
       </form>
