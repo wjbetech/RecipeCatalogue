@@ -1,5 +1,6 @@
-import React from 'react'
 import "./NavBar.css"
+import React from 'react'
+import SearchBar from "./SearchBar"
 import { Link } from "react-router-dom/cjs/react-router-dom.min"
 
 export default function NavBar() {
@@ -9,6 +10,7 @@ export default function NavBar() {
             <Link to="/" className="brand">
                 <h1>Recipe Catalogue</h1>
             </Link>
+            <SearchBar />
             <Link to="/create">
                 <p>Create Recipe</p>
             </Link>

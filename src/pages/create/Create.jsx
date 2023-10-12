@@ -1,27 +1,47 @@
-import { useState, useRef } from "react"
 import "./Create.css"
+import { useState, useRef, useEffect } from "react"
+import { useFetch } from "../../hooks/useFetch";
+import { useHistory } from "react-router-dom"
 
 export default function Create() {
 
+  // state setters
   const [title, setTitle] = useState("");
   const [method, setMethod] = useState("");
   const [cookingTime, setCookingTime] = useState("");
   const [ingredients, setIngredients] = useState([]);
   const [newIngredient, setNewIngredient] = useState("");
+  const history = useHistory()
+
+  // useRef
   const ingredientInput = useRef(null)
+
+  // useFetch
+  const { postData, data, error } = useFetch("http://localhost:3000/recipes", "POST")
+
+  // useEffect
+  useEffect(() => {
+    data && history.push("/")
+  }, [data])
+  
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(title, method, cookingTime, ingredients);
+    console.log("Submit button clicked!")
+    postData({
+      title, 
+      ingredients, 
+      method, 
+      cookingTime: cookingTime + " minutes"
+    })
   }
 
   const handleAddIngredients = (e) => {
     e.preventDefault();
     const ingred = newIngredient.trim();
     if (ingred && !ingredients.includes(ingred)) {
-      setIngredients(prevIngredients => [
-        ...prevIngredients, ingred
-      ])
+      setIngredients(prevIngredients => [...prevIngredients, ingred])
     } 
     setNewIngredient("");
     ingredientInput.current.focus();
@@ -30,7 +50,7 @@ export default function Create() {
   return (
     <div className="create">
       <h2 className="page-title">Add a New Recipe</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>
           <span>Recipe Name:</span>
           <input 
@@ -67,7 +87,7 @@ export default function Create() {
             Add
             </button>
             <ul className="ingredients">
-              {ingredients.map(i => (<li>{i}</li>))}
+              {ingredients.map(i => (<li key={i}>{i}</li>))}
             </ul>
           </div>
         </label>
@@ -81,10 +101,8 @@ export default function Create() {
           />
         </label>
 
-        <button
-          className="form-button"
-          onSubmit={handleSubmit}
-        >Submit</button>
+        <button className="form-button">Submit</button>
+
       </form>
     </div>
   )

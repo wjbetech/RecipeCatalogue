@@ -4,6 +4,7 @@
     gap: 40px;
     max-width: 90%;
     margin: 40px auto;
+    padding-bottom: 50px;
 
     & .card {
         background-color: #FFCF9D;
