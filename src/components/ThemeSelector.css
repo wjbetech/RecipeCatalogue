@@ -1,0 +1,11 @@
+.theme-buttons {
+  display: flex;
+  margin: 2rem 2rem 0 0;
+
+  & button {
+      width: 15px;
+      padding: 8px;
+      border-radius: 100%;
+      gap: 5px;
+  }
+}

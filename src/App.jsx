@@ -4,6 +4,7 @@ import Home from "./pages/home/Home";
 import Create from "./pages/create/Create";
 import Search from "./pages/search/Search";
 import Recipe from "./pages/recipe/Recipe";
+import ThemeSelector from "./components/ThemeSelector";
 import { BrowserRouter, Switch, Route } from "react-router-dom/cjs/react-router-dom.min";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
 
       <BrowserRouter>
         <NavBar />
+        <ThemeSelector />
 
         <Switch>
           <Route exact path="/">

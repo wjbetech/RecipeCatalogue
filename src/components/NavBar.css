@@ -33,3 +33,24 @@
         color: #eee;
     }
 }
+
+.theme-buttons {
+    display: flex;
+    justify-content: end;
+    gap: 5px;
+    margin: 15px 10px 0 0;
+
+    & button {
+        width: 15px;
+        padding: 8px;
+        border-radius: 100%;
+        gap: 5px;
+    }
+}
+
+@media screen and (max-width: 968px) {
+    nav {
+        font-size: 16px;
+        padding: 0 15px 0 0;
+    }
+}

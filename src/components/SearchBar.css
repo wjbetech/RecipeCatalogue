@@ -5,4 +5,11 @@
 
 .searchbar input {
     margin-left: 10px;
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 800px) {
+    .searchbar {
+        display: none;
+    }
 }
