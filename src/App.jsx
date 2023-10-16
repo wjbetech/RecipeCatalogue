@@ -6,10 +6,13 @@ import Search from "./pages/search/Search";
 import Recipe from "./pages/recipe/Recipe";
 import ThemeSelector from "./components/ThemeSelector";
 import { BrowserRouter, Switch, Route } from "react-router-dom/cjs/react-router-dom.min";
+import { useTheme } from "./hooks/useTheme";
 
 function App() {
+  const { mode } = useTheme();
+
   return (
-    <div className="App">
+    <div className={`App ${mode}`}>
 
       <BrowserRouter>
         <NavBar />

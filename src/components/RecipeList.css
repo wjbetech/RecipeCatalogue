@@ -16,6 +16,11 @@
         position: relative;
     }
 
+    & .dark {
+        background-color: rgb(33, 33, 33);
+        color: gray;
+    }
+
     & .card:hover {
         transform: rotate(3deg);
     }

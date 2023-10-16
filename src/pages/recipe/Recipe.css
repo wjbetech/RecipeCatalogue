@@ -55,3 +55,8 @@ button:hover {
     background-color: #004225;
     color: #FFB000;
 }
+
+.recipe-dark {
+    background-color: rgb(33, 33, 33);
+    color: gray;
+}

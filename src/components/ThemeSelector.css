@@ -2,10 +2,19 @@
   display: flex;
   margin: 2rem 2rem 0 0;
 
-  & button {
-      width: 15px;
-      padding: 8px;
-      border-radius: 100%;
-      gap: 5px;
+  & .color-buttons {
+    display: flex;
+    width: 15px;
+    padding: 8px 20px 8px 8px;
+    margin-right: 40px;
+    border-radius: 100%;
+    gap: 5px;
+  }
+
+  & .mode-selector {
+    margin-right: auto;
+    padding-left: 40px;
+    cursor: pointer;
   }
 }
+
