@@ -4,5 +4,29 @@
 }
 
 .dark {
-  background-color: rgb(55, 55, 55);
+  background-color: rgb(33, 33, 33);
+  color: gray;
+
+  & h1, h2, h3, h4, h5, p {
+    color: gray;
+  }
+
+  & input {
+      background-color:rgb(69, 69, 69);
+      color: rgb(170, 170, 170); 
+  }
+
+  & button {
+    background-color: slategray;
+    color: rgb(170, 170, 170);
+  }
+
+  & button:hover {
+    background-color: rgb(170, 170, 170);
+    color: slategray;
+  }
+
+  & textarea {
+    background-color: rgb(69, 69, 69);
+  }
 }

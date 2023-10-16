@@ -23,13 +23,15 @@ export default function Recipe() {
     setIsPending(true);
     myProjectFirestore.collection("recipes").doc(recipe).get()
     .then((document) => {
-      console.log(document)
-    })
-    .catch(error => {
-      setError(error);
-      console.log("ERROR!", error)
-    })
-  }, [])
+      if (document.exists) {
+        setIsPending(false);
+        setData(document.data())
+      } else {
+        setIsPending(false);
+        setError("Could not find recipe!")
+      }
+    }
+  )}, [recipe])
 
   return (
     <div className={`recipe recipe-${mode}`}>
