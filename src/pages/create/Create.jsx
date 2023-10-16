@@ -1,11 +1,12 @@
 import "./Create.css"
 import { useState, useRef, useEffect } from "react"
-import { useFetch } from "../../hooks/useFetch";
 import { useHistory } from "react-router-dom"
 import { useTheme } from "../../hooks/useTheme";
+import { myProjectFirestore } from "../../firebase/config";
 
 export default function Create() {
 
+  // useContext global theme
   const { mode } = useTheme()
 
   // state setters
@@ -19,27 +20,23 @@ export default function Create() {
   // useRef
   const ingredientInput = useRef(null)
 
-  // useFetch
-  const { postData, data, error } = useFetch("http://localhost:3000/recipes", "POST")
-
-  // useEffect
-  useEffect(() => {
-    data && history.push("/")
-  }, [data])
-  
-
-
-  const handleSubmit = (e) => {
+  // handle submitting new recipe
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Submit button clicked!")
-    postData({
+    const document = {
       title, 
       ingredients, 
       method, 
-      cookingTime: cookingTime + " minutes"
-    })
-  }
+      cookingTime: cookingTime
+    };
+    try {
+      await myProjectFirestore.collection("recipes").add(document);
+      history.push("/");
+    } catch (error) {
+      console.log("ERROR!", error);
+  }}
 
+  // create the array store for ingredients
   const handleAddIngredients = (e) => {
     e.preventDefault();
     const ingred = newIngredient.trim();
@@ -103,9 +100,7 @@ export default function Create() {
             required
           />
         </label>
-
         <button className="form-button">Submit</button>
-
       </form>
     </div>
   )

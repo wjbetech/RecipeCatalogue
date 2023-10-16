@@ -28,5 +28,6 @@
 
   & textarea {
     background-color: rgb(69, 69, 69);
+    color: rgb(170, 170, 170);
   }
 }
