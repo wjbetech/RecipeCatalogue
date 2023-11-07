@@ -1,62 +1,66 @@
 .recipe {
-    padding: 40px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
-    width: 80%;
-    max-width: 780px;
-    margin: 30px auto;
-    border-radius: 10px;
-    background-color: #FFCF9D;
+  padding: 20px 25px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  width: 80%;
+  max-width: 780px;
+  margin: 30px auto;
+  border-radius: 10px;
+  background-color: #ffcf9d;
 
-    & .recipe-name {
-        font-size: 2.5rem;
-        margin-bottom: 2rem;
-    }
+  & .recipe-name {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
 
-    & .recipe-divider {
-        margin-bottom: 2rem;
-    }
+  & .recipe-divider {
+    margin-bottom: 2rem;
+  }
 
-    & .recipe-ingredients {
-        font-size: 18px;
-        margin-bottom: 1.5rem;
-    }
+  & .recipe-ingredients {
+    font-size: 18px;
+    margin-bottom: 1.5rem;
+  }
 
-    & .ingredient-item {
-        margin: 5px 0;
-    }
+  & .ingredient-item {
+    margin: 5px 0;
+  }
 
-    & .recipe-time {
-        font-size: 18px;
-        margin-bottom: 1.5rem;
-        font-weight: 700;
-    }
+  & .recipe-time {
+    font-size: 18px;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+  }
 
-    & .recipe-method {
-        line-height: 2rem;
-        font-weight: 300;
-        font-size: 20px;
-        margin-bottom: 1.5rem;
-    }
+  & .recipe-method {
+    line-height: 2rem;
+    font-weight: 300;
+    font-size: 20px;
+    margin-bottom: 1.5rem;
+  }
+
+  & .recipe-button {
+    margin-bottom: 10px;
+  }
 }
 
 button {
-    border-radius: 4px;
-    border: none;
-    padding: 5px 10px;
-    width: 100%;
-    background-color: #FFB000;
-    color: #004225;
-    font-size: 18px;
-    font-weight: 700;
-    cursor: pointer;
+  border-radius: 4px;
+  border: none;
+  padding: 5px 10px;
+  width: 100%;
+  background-color: #ffb000;
+  color: #004225;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 button:hover {
-    background-color: #004225;
-    color: #FFB000;
+  background-color: #004225;
+  color: #ffb000;
 }
 
 .recipe-dark {
-    background-color: rgb(33, 33, 33);
-    color: gray;
+  background-color: rgb(33, 33, 33);
+  color: gray;
 }
